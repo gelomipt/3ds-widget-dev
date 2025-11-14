@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3DEXPERIENCE Widget Sample</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+            padding: 40px;
+        }
+        
+        h1 {
+            color: #333;
+            margin-bottom: 10px;
+            font-size: 2.5em;
+        }
+        
+        .subtitle {
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 1.1em;
+        }
+        
+        .widget-info {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            border-left: 4px solid #667eea;
+        }
+        
+        .widget-info h2 {
+            color: #667eea;
+            margin-bottom: 15px;
+        }
+        
+        .widget-info ul {
+            list-style-position: inside;
+            color: #555;
+            line-height: 1.8;
+        }
+        
+        .status {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 15px;
+            background: #d4edda;
+            border: 1px solid #c3e6cb;
+            border-radius: 6px;
+            color: #155724;
+            margin-bottom: 20px;
+        }
+        
+        .status::before {
+            content: "✓";
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+        
+        .api-section {
+            margin-top: 30px;
+            padding: 20px;
+            background: #fff3cd;
+            border-radius: 8px;
+            border-left: 4px solid #ffc107;
+        }
+        
+        .api-section h3 {
+            color: #856404;
+            margin-bottom: 10px;
+        }
+        
+        code {
+            background: #f4f4f4;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+            color: #e83e8c;
+        }
+        
+        .button-group {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+        }
+        
+        button {
+            padding: 12px 24px;
+            border: none;
+            border-radius: 6px;
+            font-size: 1em;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+        }
+        
+        .btn-primary {
+            background: #667eea;
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background: #5568d3;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+        }
+        
+        .btn-secondary {
+            background: #6c757d;
+            color: white;
+        }
+        
+        .btn-secondary:hover {
+            background: #5a6268;
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🚀 3DEXPERIENCE Widget Development</h1>
+        <p class="subtitle">Local HTTPS Development Environment</p>
+        
+        <div class="status">
+            HTTPS Server is running successfully at https://localhost:8443/
+        </div>
+        
+        <div class="widget-info">
+            <h2>Widget Development Setup</h2>
+            <ul>
+                <li>✓ Self-signed SSL certificate generated</li>
+                <li>✓ HTTPS server running on port 8443</li>
+                <li>✓ CORS headers enabled for API integration</li>
+                <li>✓ Ready for 3DEXPERIENCE Platform integration</li>
+            </ul>
+        </div>
+        
+        <div class="api-section">
+            <h3>Next Steps for 3DEXPERIENCE Integration</h3>
+            <p style="color: #856404; line-height: 1.6;">
+                1. Configure your widget in 3DEXPERIENCE Platform<br>
+                2. Use <code>widget.getValue()</code> and <code>widget.setValue()</code> for data exchange<br>
+                3. Implement <code>widget.addEvent()</code> for platform events<br>
+                4. Test with 3DSpace authentication
+            </p>
+        </div>
+        
+        <div class="button-group">
+            <button class="btn-primary" onclick="testConnection()">Test Connection</button>
+            <button class="btn-secondary" onclick="showConsole()">Open Console</button>
+        </div>
+    </div>
+    
+    <script>
+        function testConnection() {
+            console.log('Testing 3DEXPERIENCE connection...');
+            alert('Connection test initiated. Check console for details.');
+            
+            // Simulate widget API check
+            if (typeof widget !== 'undefined') {
+                console.log('✓ Widget API available');
+            } else {
+                console.log('⚠ Widget API not available (expected in local dev)');
+            }
+        }
+        
+        function showConsole() {
+            console.log('=== 3DEXPERIENCE Widget Environment ===');
+            console.log('Location:', window.location.href);
+            console.log('Protocol:', window.location.protocol);
+            console.log('Ready for widget development!');
+            alert('Check the browser console (F12) for environment details');
+        }
+        
+        // Log on page load
+        console.log('3DEXPERIENCE Widget loaded successfully');
+        console.log('Environment: Local HTTPS Development Server');
+    </script>
+</body>
+</html>
